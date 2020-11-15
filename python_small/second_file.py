@@ -88,3 +88,29 @@ print(reviews.loc[20:25,'winery'])
 # In the following loc command we have selected the column "price" and "winery"
 
 print(reviews.loc[2:12,['price','winery']])
+
+# loc is label based : It means we can provide the "names" of columns
+
+# Here we have refined the data framed based on "winery" and "points"
+print("\n\n")
+print(reviews.loc[(reviews['winery'] == 'Ponzi') & (reviews['points']> 94)])
+
+# from row 3 to 7, without any filter
+print("\n\n")
+print(reviews.loc[3:7])
+
+# iloc in comparison is different since it is based on index. 
+
+# suppose we want to select random rows of data from the dataframe
+
+list_needed = [12,34,56,78,5,11]
+
+print("\n\n")
+print(reviews.loc[list_needed])
+
+# lets say we want only 2,3, and 5 columns
+
+columns_needed = [2,3,5]
+
+print("\n\n")
+print(reviews.iloc[list_needed,columns_needed])
