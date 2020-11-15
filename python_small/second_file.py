@@ -62,3 +62,24 @@ print("\n\n")
 # First we will select 1st and 2nd Row and 3rd Column
 
 print(reviews.iloc[0:1,2])
+
+
+# Let's check the last row of the dataframe
+
+print("\n\n")
+print(reviews.iloc[-5:,])
+
+# It seems that we have done a lot of exercise on iloc. 
+# Let's now practice loc
+
+# The differnce between iloc and loc is in iloc we can provide numbers to select the columns
+# This may not be the case in loc , where we can suggest the name of feature or column
+
+print("\n")
+# The below command will give us first 5 values for column "country"
+print(reviews.loc[0:5,"country"])
+
+# Let's check other columns as well
+
+print("\n\n")
+print(reviews.loc[20:25,'winery'])
