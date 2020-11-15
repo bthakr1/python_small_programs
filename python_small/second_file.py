@@ -83,3 +83,8 @@ print(reviews.loc[0:5,"country"])
 
 print("\n\n")
 print(reviews.loc[20:25,'winery'])
+
+# We can also select multiple columns from the data frame
+# In the following loc command we have selected the column "price" and "winery"
+
+print(reviews.loc[2:12,['price','winery']])
