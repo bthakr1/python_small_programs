@@ -1,9 +1,23 @@
+# Importing the required libraries
+
 import pandas as pd 
-import numpy as np 
+import numpy as np
+import ssl
+import os
+ssl._create_default_https_context = ssl._create_unverified_context
 
-df = pd.DataFrame({'Yes':[50,21],'No':[131,30]})
+# Check the directory
 
-df1 = pd.DataFrame({'BOB':["I Liked it","It was wonderful"],"SUE":["I dont like it","It was pathetic"]},
-                    index=['Product A','Product B'])
+os.chdir("/Users/bt/Documents/GITHUB/python_small")
 
-print(df1)
+# Importing the data frame we will
+# be using in this exercise.
+
+reviews = pd.read_csv("winemag-data_first150k.csv", index_col=False)
+
+# Dropping the unneccessary column 
+# from the dataframe
+
+reviews.drop(columns={'Unnamed: 0'},inplace=True)
+
+print(reviews.iloc[:,1:2])
