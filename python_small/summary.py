@@ -35,6 +35,11 @@ reviews = pd.DataFrame(reviews)
 # boxplot_price.plot()
 # plt.show()
 
+# info() command will provide the info such as number of non null rows for each 
+# column and data types for each column
+
+print(reviews.info())
+
 # Now we will use the describe with a categorical column
 # Let's see what happens
 
@@ -64,3 +69,25 @@ print(reviews.describe(include='object').transpose())
 
 # The top winery is Williams Selyem and Top country is US
 # There are 48 unique countries and 632 unique varities of wines
+
+# How about we identify the unqiue countries included in the dataset
+# The "nunique" command gives the Number of unqiue countries in the data set
+
+print(reviews['country'].nunique())
+
+# unique will give us the names of those countries
+
+print(reviews.country.unique())
+
+# we can also see the number of times these countries appeared
+# it can be done by using value_counts
+print(reviews.country.value_counts())
+
+# So we can say the following 
+# nunique() --> Gives the number of unqiue values
+# unique() --> Gives the names of those unique values
+# value_counts() --> Provides the names with number of occurences
+
+# Now how about finding mean and median for price and points.
+
+print(reviews[['price','points']].mean())
