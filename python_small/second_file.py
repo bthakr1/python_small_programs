@@ -114,3 +114,5 @@ columns_needed = [2,3,5]
 
 print("\n\n")
 print(reviews.iloc[list_needed,columns_needed])
+
+# Thats all for iloc and loc
