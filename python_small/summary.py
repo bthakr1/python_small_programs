@@ -90,4 +90,12 @@ print(reviews.country.value_counts())
 
 # Now how about finding mean and median for price and points.
 
-print(reviews[['price','points']].mean())
+print(reviews[['price','points']].mean().transpose())
+
+print(reviews[['price','points']].median().transpose())
+
+# We can also use the "agg" operator for max, min, skew, and median
+
+print(reviews.agg({'price':['max','min','skew','median'],
+                    'points':['max','min','skew','median']}))
+
