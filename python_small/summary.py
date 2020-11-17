@@ -99,3 +99,11 @@ print(reviews[['price','points']].median().transpose())
 print(reviews.agg({'price':['max','min','skew','median'],
                     'points':['max','min','skew','median']}))
 
+
+# We want to know the mean price for each country
+
+print(reviews[['country','price']].groupby("country").mean())
+
+# How about median price for each country
+
+print(reviews[['country','price']].groupby('country').median())
