@@ -107,3 +107,5 @@ print(reviews[['country','price']].groupby("country").mean())
 # How about median price for each country
 
 print(reviews[['country','price']].groupby('country').median())
+
+print(reviews.groupby('country'))
